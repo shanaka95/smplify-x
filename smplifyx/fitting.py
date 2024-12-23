@@ -193,9 +193,7 @@ class FittingMonitor(object):
                 break
 
             if self.visualize and n % self.summary_steps == 0:
-                body_pose = vposer.decode(
-                    body_pose = (vposer.decode(pose_embedding).get( 'pose_body')).reshape(1, -1) if use_vposer else None
-
+                body_pose = (vposer.decode(pose_embedding).get( 'pose_body')).reshape(1, -1) if use_vposer else None
 
                 if append_wrists:
                     wrist_pose = torch.zeros([body_pose.shape[0], 6],
